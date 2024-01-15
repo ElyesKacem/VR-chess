@@ -10,12 +10,6 @@ public class ColliderList : MonoBehaviour
     {
         colliders = new List<GameObject>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        Debug.Log(colliders.Count);
-    }
   
     private void OnTriggerEnter(Collider collision)
     {

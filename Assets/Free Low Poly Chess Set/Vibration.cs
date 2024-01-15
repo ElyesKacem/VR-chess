@@ -1,3 +1,4 @@
+using Oculus.Interaction.Input;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,9 +19,13 @@ public class Vibration : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(ColliderList.colliders.Contains(inFrontObject))
+        OVRInput.Controller test =  OVRInput.GetActiveController();
+        Debug.Log(test);
+        //Debug.Log(collision.contactCount);
+        Debug.Log(collision.gameObject.name);
+        if (ColliderList.colliders.Contains(inFrontObject))
         {
-            inFrontObject.transform.position = initPosition;
+            //inFrontObject.transform.position = initPosition;
             OVRInput.SetControllerVibration(10, 10);
         }
     }
