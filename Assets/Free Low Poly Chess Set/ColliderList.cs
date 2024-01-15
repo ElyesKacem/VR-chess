@@ -16,12 +16,20 @@ public class ColliderList : MonoBehaviour
     {
         Debug.Log(colliders.Count);
     }
-    private void OnCollisionEnter(Collision collision)
+  
+    private void OnTriggerEnter(Collider collision)
     {
         if (!colliders.Contains(collision.gameObject))
         {
             Debug.Log("hi");
         }
             colliders.Add(collision.gameObject);
+        
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        // Destroy everything that leaves the trigger
+        colliders.Remove(other.gameObject);
     }
 }
