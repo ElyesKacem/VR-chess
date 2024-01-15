@@ -14,6 +14,9 @@ public class Vibration : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        OVRInput.SetControllerVibration(10, 10);
     }
 }
