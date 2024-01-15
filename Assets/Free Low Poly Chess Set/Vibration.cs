@@ -24,4 +24,8 @@ public class Vibration : MonoBehaviour
             OVRInput.SetControllerVibration(10, 10);
         }
     }
+    private void OnCollisionExit(Collision collision)
+    {
+        OVRInput.SetControllerVibration(0, 0);
+    }
 }

@@ -56,7 +56,7 @@ namespace Oculus.Interaction
         public Transform Transform => _targetTransform;
         public List<Pose> GrabPoints => _selectingPoints;
 
-        private ITransformer _activeTransformer = null;
+        protected ITransformer _activeTransformer = null;
         private ITransformer OneGrabTransformer;
         private ITransformer TwoGrabTransformer;
 
@@ -167,7 +167,7 @@ namespace Oculus.Interaction
             _activeTransformer.BeginTransform();
         }
 
-        private void UpdateTransform()
+        protected virtual void UpdateTransform()
         {
             if (_activeTransformer == null)
             {
