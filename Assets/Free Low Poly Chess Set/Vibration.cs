@@ -19,14 +19,14 @@ public class Vibration : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        OVRInput.Controller test =  OVRInput.GetActiveController();
-        Debug.Log(test);
         //Debug.Log(collision.contactCount);
-        Debug.Log(collision.gameObject.name);
+       if(collision.gameObject.tag!= "doNotTrigger")
+        {
         if (ColliderList.colliders.Contains(inFrontObject))
         {
             //inFrontObject.transform.position = initPosition;
-            OVRInput.SetControllerVibration(10, 10);
+            OVRInput.SetControllerVibration(1, 1f);
+        }
         }
     }
 }
